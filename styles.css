@@ -96,7 +96,7 @@ body {
 
 /* Intro Section */
 .intro {
-    padding: 20px 20px; /* Matching light peach background */
+    padding: 30px 30px; /* Matching light peach background */
 }
 
 .intro-content {
@@ -141,7 +141,67 @@ body {
     color: #007BFF;               /* Set blue color for 'cool' */
     text-transform: uppercase;    /* Convert 'cool' to uppercase */
 }
+/* Metrics Grid Layout */
+.metrics-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 200px;
+    align-items: center; /* Centering the grid */
+}
 
+/* Metric Card Styling */
+.metric-card {
+    max-width: 700px; /* Limit the card width */
+    border-radius: 15px; /* Curved corners */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    transform: rotate(-5deg); /* Tilt effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+/* Left-aligned Metric Cards (Odd) */
+.metric-card.left {
+    align-self: flex-start; /* Aligns the card to the left */
+}
 
+/* Right-aligned Metric Cards (Even) */
+.metric-card.right {
+    align-self: flex-end; /* Aligns the card to the right */
+}
 
+/* Hover Effect for Cards */
+.metric-card:hover {
+    transform: scale(1.05) rotate(0deg); /* Expand and reset tilt */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Title Styling */
+.metric-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Description Styling */
+.metric-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Add Responsiveness */
+@media (max-width: 768px) {
+    .metrics-grid {
+        padding: 20px; /* Adjust padding for mobile */
+    }
+    .metric-card {
+        width: 100%; /* Full width for smaller screens */
+        margin-left: 0; /* Remove margin on smaller screens */
+        margin-right: 0; /* Remove margin on smaller screens */
+    }
+}
