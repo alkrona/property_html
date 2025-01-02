@@ -9,16 +9,20 @@
 body {
     line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* Header Section */
 .header {
     display: flex;
-    justify-content: space-between; /* Logo on left, menu on right */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 1rem;
     background-color: #ffffff;
-    border-bottom: 1px solid #e0e0e0; /* Thin line below header */
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Logo Styling */
@@ -26,179 +30,191 @@ body {
     display: flex;
     align-items: center;
     font-weight: bold;
-    font-size: 1.2rem;
-    color: #333;
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .logo img {
-    height: 40px; /* Adjust the size of the logo */
-    margin-right: 10px; /* Space between logo and text */
+    height: clamp(30px, 5vw, 40px);
+    width: auto;
+    margin-right: 10px;
 }
 
 /* Navigation Menu */
 .nav-menu {
     display: flex;
-    gap: 20px; /* Space between menu items */
+    gap: clamp(10px, 2vw, 20px);
 }
 
 .nav-menu a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Menu text color */
-    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     font-weight: 500;
+    padding: 0.5rem;
 }
 
 .nav-menu a:hover {
-    color: #007BFF; /* Blue color when hovered */
+    color: #007BFF;
 }
 
 /* Hero Section */
 .hero {
     display: flex;
-    justify-content: space-between; /* Text and image side by side */
+    justify-content: space-between;
     align-items: center;
-    padding: 50px 20px;
-    background-color: #FFF8F1; /* Light peach background */
+    padding: clamp(20px, 5vw, 50px);
+    background-color: #FFF8F1;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .hero-content {
-    max-width: 50%;
-    padding-left: 10%; /* Content takes half the width */
+    flex: 1;
+    min-width: 280px;
+    max-width: 100%;
+    padding: 0 clamp(10px, 3vw, 10%);
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: clamp(15px, 3vw, 20px);
 }
 
-
 .hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 280px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-image img {
-    max-width: 400px; /* Adjust the size of the image */
-}
-
-/* Wave at the bottom (Optional) */
-.hero::after {
-    content: '';
-    display: block;
-    height: 100px;
-    background-color: #F16529; /* Orange wave color */
-    border-top-left-radius: 50% 20%;
-    border-top-right-radius: 50% 20%;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Intro Section */
 .intro {
-    padding: 30px 30px; /* Matching light peach background */
+    padding: clamp(20px, 5vw, 30px);
 }
 
 .intro-content {
-    max-width: 80%; /* Ensuring the content doesn’t span too wide */
-    margin: 0 auto; /* Centering the content */
+    max-width: min(80%, 1200px);
+    margin: 0 auto;
 }
 
 .intro-content h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center/* Centering the content */
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: clamp(15px, 3vw, 20px);
+    text-align: center;
 }
 
 .intro p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     text-align: center;
 }
+
+.intro-img {
+    margin: 2rem auto;
+    max-width: min(400px, 90%);
+}
+
 .intro-img img {
-    max-width: 400px; /* Restricts the image width */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Ensures proper alignment */
-    margin: 0 auto; /* Centers the image horizontally */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-
-.hero-img img {
-    width: 100%; /* Stretch the image across the container */
-    height: auto; /* Maintain the aspect ratio of the image */
-    display: block; /* Remove any space below the image */
-}
-
-
-
-
-
-/* Special Style for the 'cool' text */
-.cool-text {
-    color: #007BFF;               /* Set blue color for 'cool' */
-    text-transform: uppercase;    /* Convert 'cool' to uppercase */
-}
 /* Metrics Grid Layout */
 .metrics-grid {
     display: flex;
     flex-direction: column;
-    padding: 50px 200px;
-    align-items: center; /* Centering the grid */
+    padding: clamp(20px, 5vw, 50px);
+    gap: clamp(20px, 4vw, 40px);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Metric Card Styling */
 .metric-card {
-    max-width: 700px; /* Limit the card width */
-    border-radius: 15px; /* Curved corners */
-    padding: 20px;
+    max-width: min(700px, 90%);
+    border-radius: 15px;
+    padding: clamp(15px, 3vw, 20px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    color: black;
-    transform: rotate(-5deg); /* Tilt effect */
+    transform: rotate(-5deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: 0 auto;
 }
 
-/* Left-aligned Metric Cards (Odd) */
 .metric-card.left {
-    align-self: flex-start; /* Aligns the card to the left */
+    align-self: flex-start;
+    margin-left: clamp(10px, 5vw, 50px);
 }
 
-/* Right-aligned Metric Cards (Even) */
 .metric-card.right {
-    align-self: flex-end; /* Aligns the card to the right */
+    align-self: flex-end;
+    margin-right: clamp(10px, 5vw, 50px);
 }
 
-/* Hover Effect for Cards */
 .metric-card:hover {
-    transform: scale(1.05) rotate(0deg); /* Expand and reset tilt */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: scale(1.02) rotate(0deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Title Styling */
 .metric-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
+    margin-bottom: clamp(8px, 2vw, 10px);
 }
 
-/* Description Styling */
 .metric-card p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-/* Add Responsiveness */
+/* Cool Text Animation */
+.cool-text {
+    color: #007BFF;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #007BFF, #00C6FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-    .metrics-grid {
-        padding: 20px; /* Adjust padding for mobile */
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem;
     }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
     .metric-card {
         width: 100%; /* Full width for smaller screens */
         margin-left: 0; /* Remove margin on smaller screens */
@@ -300,5 +316,32 @@ body {
 
     .footer .social-icons {
         gap: 10px; /* Reduced spacing between icons */
+    }
+}
+
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .metric-card:hover {
+        transform: scale(1.02);
+    }
+
+    .metric-card.left,
+    .metric-card.right {
+        align-self: center;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .metrics-grid {
+        padding: 15px;
+    }
+
+    .intro-content {
+        max-width: 95%;
     }
 }
