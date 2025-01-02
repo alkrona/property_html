@@ -246,3 +246,59 @@ body {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Footer Section */
+.footer {
+    background-color: #FFF8F1; /* Light peach background */
+    padding: 30px 20px; /* Spacing inside the footer */
+    text-align: center; /* Center the content */
+    border-top: 1px solid #e0e0e0; /* Thin line above the footer */
+}
+
+/* Footer Text */
+.footer p {
+    font-size: 0.9rem; /* Slightly smaller text size */
+    color: #555; /* Soft text color for readability */
+    margin-bottom: 10px; /* Spacing between paragraphs */
+}
+
+/* Footer Links */
+.footer a {
+    text-decoration: none; /* Remove underline */
+    color: #007BFF; /* Blue color for links */
+    font-weight: 500; /* Slightly bold for visibility */
+}
+
+.footer a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Social Media Icons (Optional) */
+.footer .social-icons {
+    display: flex;
+    justify-content: center; /* Center align icons */
+    gap: 15px; /* Spacing between icons */
+    margin-top: 15px; /* Spacing above the icons */
+}
+
+.footer .social-icons a {
+    display: inline-block;
+    color: #555; /* Neutral icon color */
+    font-size: 1.2rem; /* Icon size */
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #007BFF; /* Blue color on hover */
+}
+
+/* Add Responsiveness */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .footer .social-icons {
+        gap: 10px; /* Reduced spacing between icons */
+    }
+}
