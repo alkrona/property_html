@@ -205,3 +205,44 @@ body {
         margin-right: 0; /* Remove margin on smaller screens */
     }
 }
+/* Clickable heading styling */
+.clickable-heading {
+    text-decoration: none;
+}
+
+.clickable-heading h3 {
+    background: linear-gradient(135deg, #ff7a18, #ff3e3e);
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.clickable-heading h3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* General button styling */
+.button-group button {
+    margin: 10px;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button-group button:hover {
+    background: linear-gradient(135deg, #8BC34A, #4CAF50);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
